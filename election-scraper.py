@@ -20,7 +20,7 @@ def main():
         soup = BeautifulSoup(html, "html.parser")
         obce_odkazy = soup.select('.center a') and soup.select('.cislo a')
 
-        kod_obce = []
+        #kod_obce = []
         #kod_obce = soup.select(".cislo")
         #for kod in kod_obce:
             #kod_obce.append(kod)
@@ -70,7 +70,7 @@ def main():
 
             for strana in strany:
                 list_stran.append(strana.text.strip())
-                #print(list_stran)
+                #print(type(list_stran))
 
             vysledky_stran_list = []
             vysledky_stran = obce_soup.find_all(headers="t1sa2 t1sb3")
@@ -79,16 +79,40 @@ def main():
 
             for s in vysledky_stran:
                 vysledky_stran_list.append(s.text.strip())
-                #print(vysledky_stran)
+
+            #list_stran = set(list_stran)
+            #list_stran = list(list_stran)
+            #print(list_stran)
+
+            #slovnik_strany = dict.fromkeys(list_stran)
+            #print(slovnik_strany)
+
+
+            #sett = set()
+            #for i in list_stran:
+                #sett.add((i, i))
+            #print(dict(sett))
+
+
 
             dohromady = {"NAZEV": obec_jmeno, "VOLICI": volici_v_seznamu, "OBALKY": obalky, "PLATNE": platne_hlasy,
                          "STRANY": vysledky_stran_list}
-            print(dohromady)
+            #print(dohromady)
+
             with open(output_path, mode='a', newline='', encoding="utf-8") as f:
                 header = ["NAZEV", "VOLICI", "OBALKY", "PLATNE", "STRANY"]
                 writer = csv.DictWriter(f, header)
                 writer.writeheader()
-                writer.writerow(dohromady)
+                writer.writerow(
+                {
+                    "NAZEV": dohromady["NAZEV"],
+                    "VOLICI": dohromady["VOLICI"],
+                    "OBALKY": dohromady["OBALKY"],
+                    "PLATNE": dohromady["PLATNE"],
+                    "STRANY": dohromady["STRANY"]
+                }
+                )
+
                 f.close()
 
 if __name__ == "__main__":
