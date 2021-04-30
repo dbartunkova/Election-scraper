@@ -12,6 +12,7 @@ Knihovny, které jsou v kódu použity, jsou uložené v souboru requirements.tx
 spustit následovně: 
 
 $ pip3 --version 
+
 $ pip3 install -r requirements.txt
 
 
@@ -32,6 +33,7 @@ python election-scraper.py "https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=
 ## Průběh stahování: 
 
 STAHUJI DATA Z VYBRANEHO URL: https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=10&xnumnuts=6105
+
 UKLADAM DATA DO SOUBORU: vysledky_zdarsko.csv
 
 UKONCUJI election-scraper
