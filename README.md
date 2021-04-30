@@ -27,10 +27,10 @@ Výsledky hlasování pro okres :
 1. argument: https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=10&xnumnuts=6105
 2. argument: vysledky_zdarsko.csv
 
-## Spuštění programu: 
+### Spuštění programu: 
 python election-scraper.py "https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=10&xnumnuts=6105" "vysledky_zdarsko.csv"
 
-## Průběh stahování: 
+### Průběh stahování: 
 
 STAHUJI DATA Z VYBRANEHO URL: https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=10&xnumnuts=6105
 
