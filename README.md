@@ -33,6 +33,7 @@ python election-scraper.py "https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=
 
 STAHUJI DATA Z VYBRANEHO URL: https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=10&xnumnuts=6105
 UKLADAM DATA DO SOUBORU: vysledky_zdarsko.csv
+
 UKONCUJI election-scraper
 
 
