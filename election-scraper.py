@@ -27,7 +27,7 @@ def main():
         volici_v_seznamu = []
         platne_hlasy = []
 
-        for odkaz in odkazy[0:4]:
+        for odkaz in odkazy:
             r = requests.get(odkaz, headers=headers)
             html = r.text
             obce_soup = BeautifulSoup(html, 'html.parser')
@@ -37,7 +37,6 @@ def main():
             for obec_jmeno in obce_jmeno:
                 obce_jmeno.append(obec_jmeno)
                 obec_jmeno = obec_jmeno.strip("\nObec:")
-
 
             volici_v_seznamu = obce_soup.find_all(headers="sa2")[0].text
 
